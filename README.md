@@ -1,72 +1,98 @@
-# Analyse de Sentiment des Critiques IMDB
+# 🎬 Analyse de Sentiment sur les Critiques de Films IMDB
 
-Ce projet réalise une analyse de sentiment sur un dataset de critiques de films IMDB, en utilisant différentes techniques de traitement du langage naturel (NLP) et d'apprentissage automatique.
+Ce projet a pour objectif de classifier automatiquement des critiques de films IMDB comme **positives** ou **négatives**, à l'aide de techniques de **traitement du langage naturel (NLP)** et de **machine learning**.
 
-## Structure du Projet
+> 📊 Dataset utilisé : [IMDB Large Movie Review Dataset](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews) (Kaggle)
+
+---
+
+## 🗂️ Structure du Projet
 
 ```
 .
-├── IMDB Dataset.csv       # Dataset original des critiques IMDB
-├── main.py                # Script principal d'analyse
-├── preprocessed_imdb.csv  # Dataset prétraité
-├── ML/                    # Résultats des modèles de machine learning
-│   ├── ini/               # Résultats des modèles initiaux
-│   └── improved/          # Résultats des modèles améliorés
-└── visualisation/         # Visualisations générées
-    ├── raw/               # Visualisations des données brutes
-    └── preprocessed/      # Visualisations des données prétraitées
+├── IMDB Dataset.csv         # Dataset brut original
+├── preprocessed_imdb.csv    # Dataset après nettoyage
+├── main.py                  # Script principal du projet
+├── ML/
+│   ├── ini/                 # Résultats des modèles initiaux (Bag of Words)
+│   └── improved/            # Résultats avec TF-IDF et optimisation
+└── visualisation/
+    ├── raw/                 # Graphiques sur les données brutes
+    └── preprocessed/        # Graphiques après prétraitement
 ```
 
-## Fonctionnalités
+---
 
-1. **Prétraitement des données**
-   - Suppression des balises HTML
-   - Suppression des caractères non alphabétiques
-   - Conversion en minuscules
-   - Tokenisation
-   - Suppression des stop words
-   - Stemming
+## ⚙️ Fonctionnalités
 
-2. **Visualisation des données**
-   - Distribution des sentiments
-   - Analyse de la longueur des critiques
-   - Nuages de mots pour les critiques positives et négatives
-   - Comparaison avant/après prétraitement
-   - Mots les plus fréquents par sentiment
+### 1. 📚 Prétraitement des Données
+- Nettoyage HTML
+- Suppression des caractères spéciaux
+- Passage en minuscules
+- Tokenisation
+- Suppression des *stop words*
+- Stemming
 
-3. **Modèles de Machine Learning**
-   - Modèles initiaux (Bag of Words)
-     - Naive Bayes
-     - Régression Logistique
-     - Random Forest
-     - SVM Linéaire
-   - Modèles améliorés (TF-IDF)
-     - Versions optimisées des modèles ci-dessus
+### 2. 📈 Visualisation
+- Distribution des sentiments
+- Longueur des critiques (avant/après)
+- Nuages de mots
+- Mots les plus fréquents
 
-## Résultats
+### 3. 🤖 Modélisation
+**Modèles testés :**
+- Naive Bayes
+- Régression Logistique
+- Random Forest
+- SVM Linéaire
 
-Les modèles ont été évalués sur leur précision à classifier correctement les critiques comme positives ou négatives. Les matrices de confusion et les rapports de classification sont disponibles dans les dossiers ML/ini et ML/improved.
+**Approches comparées :**
+- Bag of Words
+- TF-IDF (avec optimisation des hyperparamètres)
 
-Le meilleur modèle obtient une précision supérieure à 85% sur l'ensemble de test.
+---
 
-## Prérequis
+## 🏆 Résultats
+Le meilleur modèle (Régression Logistique + TF-IDF) atteint une **précision de 88.79%** sur l'ensemble de test ✅  
+Les résultats complets (rapports, matrices de confusion) sont dans les dossiers `ML/ini/` et `ML/improved/`.
 
-Pour exécuter ce projet, vous aurez besoin des bibliothèques Python suivantes :
+---
 
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- wordcloud
-- nltk
-- scikit-learn
+## 📦 Prérequis
+Installez les bibliothèques nécessaires via :
 
-## Utilisation
+```bash
+pip install -r requirements.txt
+```
 
-1. Clonez ce dépôt
-2. Installez les dépendances : `pip install -r requirements.txt`
-3. Exécutez le script principal : `python main.py`
+Modules requis :
+- `pandas`
+- `numpy`
+- `matplotlib`
+- `seaborn`
+- `wordcloud`
+- `nltk`
+- `scikit-learn`
 
-## Licence
+---
 
-Ce projet est sous licence MIT.
+## 🚀 Exécution
+
+```bash
+git clone https://github.com/Mouad-cmd-cpu/IMDB-Sentiment-Analysis.git
+cd IMDB-Sentiment-Analysis
+pip install -r requirements.txt
+python main.py
+```
+
+---
+
+## 📄 Licence
+Ce projet est sous licence **MIT** – vous êtes libre de le réutiliser, le modifier ou le partager avec attribution.
+
+---
+
+## 🙌 Auteur
+Réalisé par **EL ASRI MOUAD**  
+🔗 [Mon LinkedIn](https://www.linkedin.com/in/mouad-el-asri-24332b32b)  
+📂 [Voir le projet sur GitHub](https://github.com/Mouad-cmd-cpu/IMDB-Sentiment-Analysis)
